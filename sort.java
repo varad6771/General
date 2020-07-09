@@ -61,7 +61,7 @@ public class sort {
 			key = arr[i];
 			j = i-1;
 			while(j >= 0 && arr[j] > key){
-				System.out.println(" "+j+" "+key);
+				// System.out.println(" "+j+" "+key);
 				arr[j+1] = arr[j];
 				j--;
 			}
@@ -130,7 +130,8 @@ public class sort {
 
 	public static void main(String[] args) {
 		// int [] arr = {2,5,10,1,3};
-		int [] arr = {1,3,2,10,5,45,12};
+		int [] arr = {18, 90, 90, 13, 90, 75, 90, 8, 90, 43};
+		System.out.println();
 
 		// Bubble sort
 		// new sort().bubbleSortNormal(arr);
@@ -140,10 +141,10 @@ public class sort {
 		// new sort().selectionSort(arr);
 		
 		// Insertion sort
-		// new sort().insertionSort(arr);
+		new sort().insertionSort(arr);
 
 		// Merge sort
-		new sort().merge_sort(arr, 0, arr.length-1);
+		// new sort().merge_sort(arr, 0, arr.length-1);
 	}
 
 }
