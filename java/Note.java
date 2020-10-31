@@ -36,8 +36,6 @@ public class Note {
 			} else  {
 				break;
 			}
-
-
 		}
 
 		if (ctr == nt.size()) 

@@ -2,9 +2,8 @@
 
 
 def add_element(val, olist):
-    if val not in olist:
-        olist.append(val)
-
+    # if val not in olist:
+    olist.append(val)
 
 def climbing_leaderboard(ranked, player):
     olist = list()
@@ -21,7 +20,7 @@ def climbing_leaderboard(ranked, player):
     while i < len(player):
         tempval = player[i]
         while j > 0:
-            print(j, " ", rlist[j], " ", rlist[j - 1], " ", tempval)
+            # print(j, " ", rlist[j], " ", rlist[j - 1], " ", tempval)
             if rlist[j] < tempval and rlist[j-1] > tempval:
                 add_element(j+1, olist)
             elif tempval < rlist[len(rlist) - 1]:
@@ -35,21 +34,12 @@ def climbing_leaderboard(ranked, player):
         i = i + 1
 
     print(olist)
-    print(rlist)
+    # print(rlist)
     # return olist    
 
-
 if __name__ == '__main__':
-    # fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
     ranked_count = int(input().strip())
     ranked = list(map(int, input().rstrip().split()))
     player_count = int(input().strip())
     player = list(map(int, input().rstrip().split()))
     climbing_leaderboard(ranked, player)
-
-    # print(result)
-    # fptr.write('\n'.join(map(str, result)))
-    # fptr.write('\n')
-
-    # fptr.close()
