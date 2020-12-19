@@ -26,10 +26,6 @@ def encryption(istring):
 			else:
 				a.append("")
 
-
-
-
-				
 		matrix.append(a)
 
 

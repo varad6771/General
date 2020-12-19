@@ -26,7 +26,6 @@ def missingNumbers(arr, brr):
 
 
 if __name__ == '__main__':
-    # fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     n = int(input())
 
@@ -37,8 +36,3 @@ if __name__ == '__main__':
     brr = list(map(int, input().rstrip().split()))
 
     missingNumbers(arr, brr)
-
-    # fptr.write(' '.join(map(str, result)))
-    # fptr.write('\n')
-
-    # fptr.close()
