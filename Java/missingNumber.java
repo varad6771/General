@@ -13,12 +13,12 @@ public class missingNumber {
         // arr modified - brr original
         int count1,count2 , j = 0,k = 0, l = 0;
 
-        int freqarr [] = new int [brr.length];
-        int diff [] = new int [arr.length];
+        int[] freqarr = new int [brr.length];
+        int[] diff = new int [arr.length];
 
-        boolean visited1[] = new boolean[arr.length]; 
+        boolean[] visited1 = new boolean[arr.length];
         Arrays.fill(visited1, false); 
-        boolean visited2[] = new boolean[brr.length]; 
+        boolean[] visited2 = new boolean[brr.length];
         Arrays.fill(visited2, false); 
         Arrays.fill(freqarr,-1); 
 
@@ -63,12 +63,10 @@ public class missingNumber {
             }
         } 
         System.out.println("arr 2");
-        for (int i = 0; i < freqarr.length; i++)  
-            System.out.println(freqarr[i]);
+        for (int item : freqarr) System.out.println(item);
 
 
-        for (int i = 0; i < diff.length; i++)  
-            System.out.println(diff[i]);
+        for (int value : diff) System.out.println(value);
 
 
 
