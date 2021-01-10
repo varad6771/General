@@ -1,31 +1,27 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Toys {
 
-    
+
     static void maximumToys(int[] arr, int price) {
         int sum = 0;
         int n = arr.length;
         int ctr = 0;
         System.out.println(price);
         Arrays.sort(arr);
-        
-        for (int i = 0; i < n-1; i++ ) {
+
+        for (int i = 0; i < n - 1; i++) {
             if (sum <= price) {
                 sum += arr[i];
                 ctr++;
-                System.out.println(arr[i] + " price "+sum);
+                System.out.println(arr[i] + " price " + sum);
             }
         }
 
 
-        System.out.println(ctr + " "+sum);
+        System.out.println(ctr + " " + sum);
     }
 
     private static final Scanner scanner = new Scanner(System.in);

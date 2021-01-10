@@ -1,35 +1,32 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class CloudJmp{
+public class CloudJmp {
 
     static void jumpingOnClouds(int[] arr) {
         int i = 0, n = arr.length;
         List<Integer> path = new ArrayList<Integer>();
-        while (i < n){
+        while (i < n) {
             if (arr[i] != 1) {
-                if (path.contains(i) != true) 
+                if (path.contains(i) != true)
                     path.add(i);
-                
+
                 i = i + 2;
-            } else if (arr[i-1] != 1){
-                if (path.contains(i) != true) 
-                    path.add(i-1);
+            } else if (arr[i - 1] != 1) {
+                if (path.contains(i) != true)
+                    path.add(i - 1);
 
                 i = (i - 1) + 2;
             }
 
-            if (!path.contains(n-1)) 
-                path.add(n-1);                
+            if (!path.contains(n - 1))
+                path.add(n - 1);
 
         }
 
-        System.out.println(path.size()-1);       
+        System.out.println(path.size() - 1);
 
     }
 

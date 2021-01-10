@@ -1,28 +1,26 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Sock {
 
-    static int oddPairs(int val){
+    static int oddPairs(int val) {
         int pair = 0;
-        while(val != 1 ){
+        while (val != 1) {
             val = val - 2;
             pair++;
         }
         return pair;
     }
 
-    static int getFreq(int [] arr, int min){
+    static int getFreq(int[] arr, int min) {
         int ctr = 0;
         for (int j = 0; j < arr.length; j++) {
-            if (min == arr[j]){
-                ctr++; 
-            } 
+            if (min == arr[j]) {
+                ctr++;
+            }
         }
         return ctr;
     }
@@ -30,24 +28,24 @@ public class Sock {
     static int sockMerchant(int n, int[] arr) {
         int ctrv = 0, min = 0;
         int val = 0, pairs = 0;
-        Map <Integer, Integer> data = new HashMap<Integer,Integer>();
+        Map<Integer, Integer> data = new HashMap<Integer, Integer>();
         Arrays.sort(arr);
 
 
-        for (int i = 0; i < n-1; i++ ) {
+        for (int i = 0; i < n - 1; i++) {
             min = arr[i];
             ctrv = getFreq(arr, min);
             data.put(min, ctrv);
         }
-     
+
 
         for (Integer i : data.keySet()) {
             val = data.get(i);
 
             if (val % 2 == 0) {
-                pairs += val/2;
+                pairs += val / 2;
             } else {
-                pairs += oddPairs(val); 
+                pairs += oddPairs(val);
             }
         }
 

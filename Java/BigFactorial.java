@@ -1,10 +1,5 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.math.BigInteger;
+import java.util.Scanner;
 
 public class BigFactorial {
 
@@ -15,10 +10,10 @@ public class BigFactorial {
         BigInteger fact = BigInteger.valueOf(n);
         BigInteger no = BigInteger.valueOf(n);
         // System.out.println("f "+fact);
-        for (int i = n-1; 1 <= i; i--) {
+        for (int i = n - 1; 1 <= i; i--) {
             fact = fact.multiply(no.subtract(BigInteger.valueOf(i)));
         }
-        System.out.println(""+fact);
+        System.out.println("" + fact);
     }
 
     private static final Scanner scanner = new Scanner(System.in);

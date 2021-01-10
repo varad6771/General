@@ -1,11 +1,8 @@
 // fails 4 test cases
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class pairs {
 
@@ -18,14 +15,14 @@ public class pairs {
         for (int i = 0; i < arr.length - 1; i++) {
             temp = arr[i];
             for (int j = i + 1; j < arr.length; j++) {
-                  vard = arr[j] - temp;      
+                vard = arr[j] - temp;
                 if (vard == k) {
                     ctr++;
                 }
             }
         }
 
-        System.out.println("ctr "+ctr);
+        System.out.println("ctr " + ctr);
 
     }
 

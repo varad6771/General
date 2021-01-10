@@ -1,26 +1,23 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class TwoStrings {
 
     static String twoStrings(String s1, String s2) {
         HashMap<Integer, String> s1map = new HashMap<Integer, String>();
         HashMap<Integer, String> s2map = new HashMap<Integer, String>();
-        
+
         char temp;
         for (int i = 0; i < s1.length(); i++) {
             temp = s1.charAt(i);
-            s1map.put(i, temp+"");
+            s1map.put(i, temp + "");
         }
 
-        for (int i = 0; i < s2.length(); i++ ) {
+        for (int i = 0; i < s2.length(); i++) {
             temp = s2.charAt(i);
-            s2map.put(i, temp+"");
+            s2map.put(i, temp + "");
         }
 
         // for (Map.Entry<Integer, String> entry : s2map.entrySet()) {
@@ -33,7 +30,7 @@ public class TwoStrings {
             val = entry.getValue();
             // System.out.println(val+" "+s2map.containsValue(val));
             if (s2map.containsValue(val)) {
-                status  = true;
+                status = true;
             }
         }
 
@@ -57,7 +54,7 @@ public class TwoStrings {
 
             String s2 = scanner.nextLine();
             // twoStrings(s1, s2);
-            String result =  twoStrings(s1, s2);
+            String result = twoStrings(s1, s2);
             System.out.println(result);
             // bufferedWriter.write(result);
             // bufferedWriter.newLine();

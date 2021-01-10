@@ -1,10 +1,4 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class IceCream {
 
@@ -23,20 +17,20 @@ public class IceCream {
         int num = 0;
         List<Integer> list = new ArrayList<Integer>();
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for(int i = 0; i < n-1; i++)
+        for (int i = 0; i < n - 1; i++)
             map.put(i, cost[i]);
-        
 
-        for (int i = 0;  i < n; i++) {
+
+        for (int i = 0; i < n; i++) {
             num = money - cost[i];
             if (map.containsValue(num)) {
-                index = getIndex(map,num);
-                list.add(index+1);
+                index = getIndex(map, num);
+                list.add(index + 1);
             }
         }
         Collections.sort(list);
-        for (int i = 0; i < list.size(); i++) 
-            System.out.print(list.get(i) + " ");  
+        for (int i = 0; i < list.size(); i++)
+            System.out.print(list.get(i) + " ");
         System.out.println();
     }
 

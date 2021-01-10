@@ -1,10 +1,5 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class StringRep {
 
@@ -13,21 +8,21 @@ public class StringRep {
         long val = n % len;
         String text = null;
         long ctr = 0;
-        long nmult = n / len; 
+        long nmult = n / len;
         if (len == 1 && input.equals("a")) {
             ctr = n;
         } else {
 
-            for (int i = 0; i < input.length(); i++ ) {
-                if (input.charAt(i) == 'a') 
+            for (int i = 0; i < input.length(); i++) {
+                if (input.charAt(i) == 'a')
                     ctr++;
             }
 
-            ctr *= nmult; 
+            ctr *= nmult;
 
-            text += input.substring(0,Math.toIntExact(val));            
-            for (int i = 0; i < text.length(); i++ ) {
-                if (text.charAt(i) == 'a') 
+            text += input.substring(0, Math.toIntExact(val));
+            for (int i = 0; i < text.length(); i++) {
+                if (text.charAt(i) == 'a')
                     ctr++;
             }
 

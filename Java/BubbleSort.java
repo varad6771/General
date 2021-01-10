@@ -1,37 +1,31 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
-public class Solution {
+public class BubbleSort {
 
-    
+
     static void countSwaps(int[] arr) {
         int n = arr.length;
         int temp = 0;
-        boolean swap ;
+        boolean swap;
         int ctr = 0;
-        for(int i = 0; i < n-1; i++){
+        for (int i = 0; i < n - 1; i++) {
             swap = false;
-            for (int j = 0; j < n-i-1; j++ ) {
-                if (arr[j] > arr[j+1]) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
                     temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                     swap = true;
                     ctr++;
                 }
             }
-            if (swap == false) 
-                break;                
+            if (swap == false)
+                break;
         }
 
-        System.out.println("Array is sorted in "+ctr+" swaps");
-        System.out.println("First Element: "+arr[0]);
-        System.out.println("Last Element: "+arr[n-1]);
+        System.out.println("Array is sorted in " + ctr + " swaps");
+        System.out.println("First Element: " + arr[0]);
+        System.out.println("Last Element: " + arr[n - 1]);
 
 
     }

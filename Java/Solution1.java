@@ -1,44 +1,39 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Solution1 {
 
-	// calc list of sums
-	// sort sums
-	// return max
+    // calc list of sums
+    // sort sums
+    // return max
 
-	public static int calcSum(int i, int j, int m, int n, int [][] arr){
-		int sum = 0;
-		while(i < m){
-			while(j < m){
-				sum += arr[i][j];
-				j++;
-			}
-			i++;
-		}
-		
-		return sum;
-	}
+    public static int calcSum(int i, int j, int m, int n, int[][] arr) {
+        int sum = 0;
+        while (i < m) {
+            while (j < m) {
+                sum += arr[i][j];
+                j++;
+            }
+            i++;
+        }
+
+        return sum;
+    }
 
     // Complete the hourglassSum function below.
-    static void  hourglassSum(int[][] arr) {
-    	int m = arr.length ,n = arr.length;
-    	int val = 0;
-    	for (int i = 0; i < m; i++){
-    		val = calcSum(i, 0, m, n, arr);
-    	}
-    	// System.out.println(val);
+    static void hourglassSum(int[][] arr) {
+        int m = arr.length, n = arr.length;
+        int val = 0;
+        for (int i = 0; i < m; i++) {
+            val = calcSum(i, 0, m, n, arr);
+        }
+        // System.out.println(val);
 
-    	// for (int i = 0; i < m; i++ ){
-    	// 	for (int j = 0; j < n; j++){
-    	// 		System.out.println(arr[i][j]);
-    	// 	} 
-    	// } 
+        // for (int i = 0; i < m; i++ ){
+        // 	for (int j = 0; j < n; j++){
+        // 		System.out.println(arr[i][j]);
+        // 	}
+        // }
     }
 
     public static final Scanner scanner = new Scanner(System.in);
