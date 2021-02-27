@@ -62,10 +62,9 @@ public class Solution {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-        })
-                .map(String::trim)
-                .map(Integer::parseInt)
-                .collect(toList());
+        }).map(String::trim)
+          .map(Integer::parseInt)
+          .collect(toList());
 
         List<Integer> result = gradingStudents(grades);
 

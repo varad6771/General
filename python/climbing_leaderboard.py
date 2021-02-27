@@ -1,9 +1,11 @@
 #!/bin/python3
 
 
-def add_element(val, olist):
-    # if val not in olist:
-    olist.append(val)
+def add_element(val, olist, cond):
+    if (val not in olist) and cond != 1:
+        olist.append(val)
+    elif cond == 1:
+        olist.append(val)
 
 def climbing_leaderboard(ranked, player):
     olist = list()
@@ -22,13 +24,13 @@ def climbing_leaderboard(ranked, player):
         while j > 0:
             # print(j, " ", rlist[j], " ", rlist[j - 1], " ", tempval)
             if rlist[j] < tempval and rlist[j-1] > tempval:
-                add_element(j+1, olist)
+                add_element(j+1, olist,1)
             elif tempval < rlist[len(rlist) - 1]:
-                add_element(len(rlist) + 1, olist)
+                add_element(len(rlist) + 1, olist,2)
             elif tempval > rlist[0]:
-                add_element(1, olist)
+                add_element(1, olist,3)
             elif  rlist[j] == tempval:
-                add_element(j+1,olist)
+                add_element(j+1,olist,4)
             j = j - 1
         j = len(rlist) - 1
         i = i + 1

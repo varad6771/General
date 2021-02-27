@@ -1,7 +1,47 @@
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class GenPrograms {
+
+    public void astPartPyramid(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    public void revAstPartPyramid(int n) {
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 2 * (n - i); j >= 0; j--) {
+                // printing spaces
+                System.out.print(" ");
+            }
+
+
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void astPyramid(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = n - i; j > 1; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= i; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
 
     public void anagram(String inp1, String inp2) {
 
@@ -24,16 +64,45 @@ public class GenPrograms {
         System.out.println("Math.abs(sum-sum1) = " + Math.abs(sum - sum1));
     }
 
-    public static void main(String[] args) {
-//        new GenPrograms().anagram("ate", "tea");
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int arr[][] = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                arr[i][j] = sc.nextInt();
-            }
+    public void sumDigits(int no) {
+        String num = String.valueOf(no);
+        int mul = 1;
+        for (char cno : num.toCharArray()) {
+            System.out.println("char = " + cno);
+            mul *= Integer.parseInt(cno + "");
         }
-        new GenPrograms().sumDiag(arr, n);
+        System.out.println("mul = " + mul);
+
+    }
+
+    public void replaceString(String neww) {
+        String b = neww.replace("7", "");
+        b = b.replace("56", "");
+        System.out.println("new str = " + b);
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int [] arr = {0,1,2,3,4,5,6,7,8};
+        List <Integer> alist = Arrays.stream(arr).boxed().collect(Collectors.toList());
+
+
+//        String inp = sc.nextLine();
+        int n = sc.nextInt();
+//        int arr[][] = new int[n][n];
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < n; j++) {
+//                arr[i][j] = sc.nextInt();
+//            }
+//        }
+//        new GenPrograms().replaceString(inp);
+//        new GenPrograms().anagram("ate", "tea");
+//        new GenPrograms().sumDigits(n);
+//        new GenPrograms().sumDiag(arr, n);
+
+//        new GenPrograms().revAstPartPyramid(n);
+        new GenPrograms().astPyramid(n);
+
     }
 }

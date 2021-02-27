@@ -10,12 +10,12 @@ public class CloudJmp {
         List<Integer> path = new ArrayList<Integer>();
         while (i < n) {
             if (arr[i] != 1) {
-                if (path.contains(i) != true)
+                if (!path.contains(i))
                     path.add(i);
 
                 i = i + 2;
             } else if (arr[i - 1] != 1) {
-                if (path.contains(i) != true)
+                if (!path.contains(i))
                     path.add(i - 1);
 
                 i = (i - 1) + 2;

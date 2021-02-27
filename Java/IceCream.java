@@ -21,16 +21,15 @@ public class IceCream {
             map.put(i, cost[i]);
 
 
-        for (int i = 0; i < n; i++) {
-            num = money - cost[i];
+        for (int j : cost) {
+            num = money - j;
             if (map.containsValue(num)) {
                 index = getIndex(map, num);
                 list.add(index + 1);
             }
         }
         Collections.sort(list);
-        for (int i = 0; i < list.size(); i++)
-            System.out.print(list.get(i) + " ");
+        for (Integer integer : list) System.out.print(integer + " ");
         System.out.println();
     }
 
