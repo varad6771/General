@@ -14,9 +14,7 @@ public class RunLength {
 
         for (char c : word) {
             if (c == current) {
-                count++;
-                index++;
-
+                count++; index++;
                 if (index == word.length) {
                     // System.out.println("in if "+current+" "+Integer.toString(count));
                     sb.append(Integer.toString(count) + current);

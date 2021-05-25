@@ -6,14 +6,17 @@ class palindrome {
 
         while (num != 0) {
             rem = num % 10;
-            rev = rev * 10 + rem;
+            System.out.println("rem = " + rem);
+//            rev = rev * 10 + rem;
+//            System.out.println("rev = " + rev);
             num = num / 10;
+            System.out.println("num = " + num);
         }
-
-        if (rev == number)
-            System.out.println("yes");
-        else
-            System.out.println("no");
+//
+//        if (rev == number)
+//            System.out.println("yes");
+//        else
+//            System.out.println("no");
 
 
     }

@@ -1,9 +1,54 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class GenPrograms {
+
+    public static double round(double val){
+        BigDecimal bd = BigDecimal.valueOf(val);
+        bd = bd.setScale(2, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
+
+    public List<String> cashRegister(double cost, double paid) {
+        List<String> op = new ArrayList<>();
+        Map<Double, String> register = new HashMap<>();
+
+        register.put(0.01, "PENNY");
+        register.put(0.05, "NICKEL");
+        register.put(0.10, "DIME");
+        register.put(0.50, "CENT");
+        register.put(1.0,"DOLLAR");
+        register.put(5.0, "FIVE");
+        register.put(10.0,"TEN");
+        register.put(20.0,"TWENTY");
+
+
+        double rem = round(Math.abs(paid - cost));
+//        System.out.println("rem = " + rem);
+        ArrayList<Double> keyList = new ArrayList<>(register.keySet());
+        Collections.sort(keyList);
+        int i = keyList.size()-1;
+
+        while(i >= 0) {
+//            System.out.println("val = " + keyList.get(i));
+            if (rem >= keyList.get(i)) {
+                rem = round(rem - keyList.get(i));
+//                System.out.println("val = " + keyList.get(i) + " - " + register.get(keyList.get(i)) + " rem " + rem);
+                op.add(register.get(keyList.get(i)));
+                i--;
+            } else if (rem == 0.0){
+//                System.out.println("in elif");
+                break;
+            } else {
+//                System.out.println("in else");
+                i--;
+            }
+        }
+
+        return op;
+    }
 
     public void astPartPyramid(int n) {
         for (int i = 0; i < n; i++) {
@@ -83,13 +128,12 @@ public class GenPrograms {
     }
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        int [] arr = {0,1,2,3,4,5,6,7,8};
-        List <Integer> alist = Arrays.stream(arr).boxed().collect(Collectors.toList());
-
-
+        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        List<Integer> alist = Arrays.stream(arr).boxed().collect(Collectors.toList());
 //        String inp = sc.nextLine();
-        int n = sc.nextInt();
+//        int n = sc.nextInt();
 //        int arr[][] = new int[n][n];
 //        for (int i = 0; i < n; i++) {
 //            for (int j = 0; j < n; j++) {
@@ -102,7 +146,10 @@ public class GenPrograms {
 //        new GenPrograms().sumDiag(arr, n);
 
 //        new GenPrograms().revAstPartPyramid(n);
-        new GenPrograms().astPyramid(n);
+//        new GenPrograms().astPyramid(n);
+
+        List<String> op = new GenPrograms().cashRegister(55, 54.94);
+        for (String s : op) System.out.println(s);
 
     }
 }

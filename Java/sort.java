@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class sort {
 
     public void bubbleSortNormal(int[] arr) {
@@ -129,11 +131,12 @@ public class sort {
         }
     }
 
-
     public void display(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        Arrays.stream(arr).forEach(System.out::print);
+
+//        for (int i = 0; i < arr.length; i++)
+//            System.out.print(arr[i] + " ");
+
     }
 
     public static void main(String[] args) {

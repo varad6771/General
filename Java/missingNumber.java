@@ -41,7 +41,7 @@ public class missingNumber {
         //     System.out.println(freqarr[i]);
         k = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (visited1[i] == true)
+            if (visited1[i])
                 continue;
             count1 = 1;
             for (j = i + 1; j < arr.length; j++) {
